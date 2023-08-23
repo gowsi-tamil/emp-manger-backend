@@ -3,15 +3,12 @@ const querystring = require("querystring");
 
 // Connecting with MongoDB
 mongoose.set("strictQuery", false);
-
-const username = "gowsi";
-const password = "sibimathew27";  // Replace with your actual password
+ // Replace with your actual password
 //const encodedPassword = querystring.escape(password);
-
+//process.env.DB_ATLAS
 //console.log(encodedPassword)
 mongoose
-  .connect(
-    `mongodb+srv://gowsi:ncXEU2J3puENS6Bl@cluster0.plrul.mongodb.net/mean_stack?retryWrites=true&w=majority`,
+  .connect(process.env.DB_ATLAS,
     {
       useNewUrlParser: true,
       useUnifiedTopology: true
